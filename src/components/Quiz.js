@@ -31,6 +31,7 @@ const Quiz = ({ category, difficulty, onQuizComplete }) => {
         }));
     
         setQuestions(data);
+        console.log(response.data);
       } catch (error) {
         console.log('Error fetching questions:', error);
       }

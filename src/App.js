@@ -1,12 +1,12 @@
-import React, { useState } from 'react';
-import CategorySelect from './components/CategorySelect';
-import DifficultySelect from './components/DifficultySelect';
-import Quiz from './components/Quiz';
-import Result from './components/Result';
+import React, { useState } from "react";
+import CategorySelect from "./components/CategorySelect";
+import DifficultySelect from "./components/DifficultySelect";
+import Quiz from "./components/Quiz";
+import Result from "./components/Result";
 
 function App() {
-  const [selectedCategory, setSelectedCategory] = useState('');
-  const [selectedDifficulty, setSelectedDifficulty] = useState('');
+  const [selectedCategory, setSelectedCategory] = useState("");
+  const [selectedDifficulty, setSelectedDifficulty] = useState("");
   const [quizStarted, setQuizStarted] = useState(false);
   const [quizScore, setQuizScore] = useState(0);
 
@@ -28,41 +28,53 @@ function App() {
   };
 
   const handlePlayAgain = () => {
-    setSelectedCategory('');
-    setSelectedDifficulty('');
+    setSelectedCategory("");
+    setSelectedDifficulty("");
     setQuizStarted(false);
     setQuizScore(0);
   };
 
   return (
     <div className="App">
-      <h1>Trivia Game</h1>
-      {!quizStarted && !quizScore ? (
-        <>
-          <CategorySelect onSelectCategory={handleCategorySelect} />
-          <DifficultySelect onSelectDifficulty={handleDifficultySelect} />
-          <button type="button" onClick={handleStartQuiz}>
-            Start Quiz
-          </button>
-        </>
-      ) : (
-        <>
-          {quizStarted && (
-            <Quiz
-              category={selectedCategory}
-              difficulty={selectedDifficulty}
-              onQuizComplete={handleQuizComplete}
-            />
-          )}
-          {quizScore > 0 && (
-            <Result
-              score={quizScore}
-              totalQuestions={5} // Set the total number of questions here
-              onPlayAgain={handlePlayAgain}
-            />
-          )}
-        </>
-      )}
+      <div className="container">
+        <div className="container text-center">
+          <h1 className="display-4">Trivia Game</h1>
+        </div>
+        {!quizStarted && !quizScore ? (
+          <div className="row justify-content-center">
+            <div className="col-md-7">
+              <CategorySelect onSelectCategory={handleCategorySelect} />
+              <DifficultySelect onSelectDifficulty={handleDifficultySelect} />
+              <div className="text-center">
+                <button
+                  type="button"
+                  className="btn btn-primary mt-3 w-25"
+                  onClick={handleStartQuiz}
+                >
+                  Start Quiz
+                </button>
+              </div>
+            </div>
+          </div>
+        ) : (
+          <>
+            {quizStarted && (
+              <Quiz
+                category={selectedCategory}
+                difficulty={selectedDifficulty}
+                onQuizComplete={handleQuizComplete}
+              />
+            )}
+            {quizScore > 0 && (
+              <Result
+                score={quizScore}
+                totalQuestions={5} // Set the total number of questions here
+                onPlayAgain={handlePlayAgain}
+              />
+            )}
+          </>
+        )}
+      </div>
     </div>
   );
 }
