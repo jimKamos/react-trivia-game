@@ -1,0 +1,19 @@
+/*! `Custom` Bootstrap 5 theme */
+@import url(https://fonts.googleapis.com/css?family=Quicksand:200,300,400,700);
+$headings-font-family:Arial;
+// $enable-grid-classes:false;
+$primary:#2f3c48;
+$secondary:#6f7f8c;
+$success:#3e4d59;
+$danger:#cc330d;
+$info:#5c8f94;
+$warning:#6e9fa5;
+$light:#eceeec;
+$dark:#1e2b37;
+$enable-gradients:true;
+$spacer:1.2rem;
+$border-width:1px;
+$btn-border-radius:1.35rem;
+// Add SASS theme customizations here..
+@import "~bootstrap/scss/bootstrap";
+

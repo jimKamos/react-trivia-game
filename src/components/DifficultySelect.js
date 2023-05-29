@@ -7,9 +7,9 @@ const DifficultySelect = ({ onSelectDifficulty }) => {
   };
 
   return (
-    <div>
-      <h2>Select Difficulty</h2>
-      <select onChange={handleDifficultyChange}>
+    <div className='form-group'>
+      <label htmlFor="difficultySelect">Select Difficulty</label>
+      <select className='form-select' id='difficultySelect' onChange={handleDifficultyChange}>
         <option value="">Any Difficulty</option>
         <option value="easy">Easy</option>
         <option value="medium">Medium</option>

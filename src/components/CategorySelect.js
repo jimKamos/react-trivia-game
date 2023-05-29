@@ -23,9 +23,9 @@ const CategorySelect = ({ onSelectCategory }) => {
   };
 
   return (
-    <div>
-      <h2>Select Category</h2>
-      <select onChange={handleCategoryChange}>
+    <div className='form-group'>
+      <label htmlFor="categorySelect">Select category</label>
+      <select className='form-select' id='categorySelect' onChange={handleCategoryChange}>
         <option value="">Any Category</option>
         {categories.map((category) => (
           <option key={category.id} value={category.id}>
