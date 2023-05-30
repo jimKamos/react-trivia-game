@@ -36,23 +36,21 @@ function App() {
 
   return (
     <div className="App">
-      <div className="container">
-        <div className="container text-center">
+      <div className="container vw-100">
+        <div className="text-center">
           <h1 className="display-4">Trivia Game</h1>
         </div>
         {!quizStarted && !quizScore ? (
           <div className="row justify-content-center">
-            <div className="col-md-7">
-              <CategorySelect onSelectCategory={handleCategorySelect} />
-              <DifficultySelect onSelectDifficulty={handleDifficultySelect} />
-              <div className="text-center">
-                <button
-                  type="button"
-                  className="btn btn-primary mt-3 w-25"
-                  onClick={handleStartQuiz}
-                >
-                  Start Quiz
-                </button>
+            <div className="col-md-6">
+              <div className="card p-4 mb-4">
+                <CategorySelect onSelectCategory={handleCategorySelect} />
+                <DifficultySelect onSelectDifficulty={handleDifficultySelect} />
+                <div className="text-center">
+                  <button type="button" className="btn btn-primary mt-3" onClick={handleStartQuiz}>
+                    Start Quiz
+                  </button>
+                </div>
               </div>
             </div>
           </div>

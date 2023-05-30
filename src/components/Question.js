@@ -1,4 +1,4 @@
-import React from 'react';
+import React from "react";
 
 const Question = ({ question, choices, onSelectAnswer }) => {
   const handleAnswerSelect = (choice) => {
@@ -6,15 +6,15 @@ const Question = ({ question, choices, onSelectAnswer }) => {
   };
 
   return (
-    <div>
-      <h2>{question}</h2>
-      <ul>
+    <div className="card">
+      <h3 className="card__question">{question}</h3>
+      <div className="card__answers my-3 w-75 mx-auto">
         {choices.map((choice, index) => (
-          <li key={index} onClick={() => handleAnswerSelect(choice)}>
+          <span key={index} className="card__answer my-1" onClick={() => handleAnswerSelect(choice)}>
             {choice}
-          </li>
+          </span>
         ))}
-      </ul>
+      </div>
     </div>
   );
 };
